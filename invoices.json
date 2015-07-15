@@ -1,47 +1,47 @@
 {
-	"id": "0bf40e63-43d4-210d-d43f-76293602e15e",
-	"name": "Mobbr Invoices API Test",
+	"id": "8f7a18ab-82f3-bd33-61f0-e92d9a47f4a8",
+	"name": "/api_v1/invoices",
 	"description": "Mobbr Invoices API Test",
 	"order": [],
 	"folders": [
 		{
-			"id": "10b35fd0-0ff8-c6ec-05cc-7c623fb4b990",
+			"id": "f0be7be2-4957-6f77-834f-249c87280d42",
 			"name": "Auth",
 			"description": "Basic Authentication",
 			"write": true,
 			"order": [
-				"cf81a84e-de9a-f079-a73b-3f8203de6edd",
-				"3b26f42f-d677-f44f-cef2-5b32146b2111",
-				"527f430e-bab6-10a6-beb2-a110c9563343"
+				"7d1e3b25-aa52-ab81-2649-988d251e50dc",
+				"b6f2f268-cb04-9668-488a-10ad8c4bced0",
+				"e3f8fd75-24fd-5871-f0bb-aaae2cfef819"
 			],
 			"collection": "0bf40e63-43d4-210d-d43f-76293602e15e",
-			"owner": "69266",
+			"owner": "69177",
 			"collection_name": "Mobbr Invoices API Test",
-			"collection_owner": "69266",
-			"collection_id": "0bf40e63-43d4-210d-d43f-76293602e15e"
+			"collection_owner": "69177",
+			"collection_id": "8f7a18ab-82f3-bd33-61f0-e92d9a47f4a8"
 		},
 		{
-			"id": "98e1432b-c889-b358-56fb-33317cfcaa5d",
+			"id": "e38bcb5f-9b6b-41ed-4c98-8b73727c3fa5",
 			"name": "No Auth",
 			"description": "No Authentication",
 			"write": true,
 			"order": [
-				"281d58a1-2637-8e04-283b-926c7d792846"
+				"3aa17a7d-dfd7-1a14-ea2d-f482dc489a34"
 			],
 			"collection": "0bf40e63-43d4-210d-d43f-76293602e15e",
-			"owner": "69266",
+			"owner": "69177",
 			"collection_name": "Mobbr Invoices API Test",
-			"collection_owner": "69266",
-			"collection_id": "0bf40e63-43d4-210d-d43f-76293602e15e"
+			"collection_owner": "69177",
+			"collection_id": "8f7a18ab-82f3-bd33-61f0-e92d9a47f4a8"
 		}
 	],
 	"timestamp": 1436448606076,
-	"owner": "69266",
+	"owner": "69177",
 	"remoteLink": "",
 	"public": false,
 	"requests": [
 		{
-			"id": "281d58a1-2637-8e04-283b-926c7d792846",
+			"id": "3aa17a7d-dfd7-1a14-ea2d-f482dc489a34",
 			"headers": "Content-Type: application/json\nAccept: application/json\n",
 			"url": "https://TEST-API.MOBBR.COM/api_v1/invoices/?offset=0&limit=100",
 			"preRequestScript": "",
@@ -56,49 +56,12 @@
 			"time": 1436448914260,
 			"name": "/invoices/ No Auth Test 1  with correct Arguments",
 			"description": "invoices/ No Auth Test 1  with correct Arguments",
-			"collectionId": "0bf40e63-43d4-210d-d43f-76293602e15e",
-			"responses": []
+			"collectionId": "8f7a18ab-82f3-bd33-61f0-e92d9a47f4a8",
+			"responses": [],
+			"folder": "e38bcb5f-9b6b-41ed-4c98-8b73727c3fa5"
 		},
 		{
-			"id": "3b26f42f-d677-f44f-cef2-5b32146b2111",
-			"headers": "Authorization: Basic QWxleGFuZGVyOm0wYmJyMjAx\nAccept: application/json\n",
-			"url": "https://TEST-API.MOBBR.COM/api_v1/invoices?offset=0&limit=100",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "tests[\" 403 Forbidden\"] = responseCode.code === 403;\n",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1436450340790,
-			"name": "/invoices/ Basic  Auth Test 2  with correct Arguments wrong Credentials",
-			"description": "invoices/ Basic  Auth Test 2  with correct Arguments wrong Credentials",
-			"collectionId": "0bf40e63-43d4-210d-d43f-76293602e15e",
-			"responses": []
-		},
-		{
-			"id": "527f430e-bab6-10a6-beb2-a110c9563343",
-			"headers": "Authorization: Basic QWxleGFuZGVyOm0wYmJyMjAxMQ==\nAccept: application/json\n",
-			"url": "https://TEST-API.MOBBR.COM/api_v1/invoices?offset=fgh&limit=878",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "tests[\" 400 Bad Request\"] = responseCode.code === 400;\nvar data = JSON.parse(responseBody);\ntests[\"result\"] = data.result !== undefined;\ntests[\"type\"] = data.message.type !== undefined;\ntests[\"text\"] = data.message.text !== undefined;",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1436450847679,
-			"name": "/invoices/ Basic  Auth Test 2  with wrong Arguments correct Credentials ",
-			"description": "/invoices/ Basic  Auth Test 2  with wrong Arguments correct Credentials ",
-			"collectionId": "0bf40e63-43d4-210d-d43f-76293602e15e",
-			"responses": []
-		},
-		{
-			"id": "cf81a84e-de9a-f079-a73b-3f8203de6edd",
+			"id": "7d1e3b25-aa52-ab81-2649-988d251e50dc",
 			"headers": "Authorization: Basic QWxleGFuZGVyOm0wYmJyMjAxMQ==\nAccept: application/json\n",
 			"url": "https://TEST-API.MOBBR.COM/api_v1/invoices?offset=0&limit=100",
 			"preRequestScript": "",
@@ -113,8 +76,49 @@
 			"time": 1436527838163,
 			"name": "/invoices/ Basic  Auth Test 1  with correct Arguments correct Credentials",
 			"description": "invoices/ Basic  Auth Test 1  with correct Arguments",
-			"collectionId": "0bf40e63-43d4-210d-d43f-76293602e15e",
-			"responses": []
+			"collectionId": "8f7a18ab-82f3-bd33-61f0-e92d9a47f4a8",
+			"responses": [],
+			"folder": "f0be7be2-4957-6f77-834f-249c87280d42"
+		},
+		{
+			"id": "b6f2f268-cb04-9668-488a-10ad8c4bced0",
+			"headers": "Authorization: Basic QWxleGFuZGVyOm0wYmJyMjAx\nAccept: application/json\n",
+			"url": "https://TEST-API.MOBBR.COM/api_v1/invoices?offset=0&limit=100",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\" 403 Forbidden\"] = responseCode.code === 403;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1436450340790,
+			"name": "/invoices/ Basic  Auth Test 2  with correct Arguments wrong Credentials",
+			"description": "invoices/ Basic  Auth Test 2  with correct Arguments wrong Credentials",
+			"collectionId": "8f7a18ab-82f3-bd33-61f0-e92d9a47f4a8",
+			"responses": [],
+			"folder": "f0be7be2-4957-6f77-834f-249c87280d42"
+		},
+		{
+			"id": "e3f8fd75-24fd-5871-f0bb-aaae2cfef819",
+			"headers": "Authorization: Basic QWxleGFuZGVyOm0wYmJyMjAxMQ==\nAccept: application/json\n",
+			"url": "https://TEST-API.MOBBR.COM/api_v1/invoices?offset=fgh&limit=878",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\" 400 Bad Request\"] = responseCode.code === 400;\nvar data = JSON.parse(responseBody);\ntests[\"result\"] = data.result !== undefined;\ntests[\"type\"] = data.message.type !== undefined;\ntests[\"text\"] = data.message.text !== undefined;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1436450847679,
+			"name": "/invoices/ Basic  Auth Test 2  with wrong Arguments correct Credentials ",
+			"description": "/invoices/ Basic  Auth Test 2  with wrong Arguments correct Credentials ",
+			"collectionId": "8f7a18ab-82f3-bd33-61f0-e92d9a47f4a8",
+			"responses": [],
+			"folder": "f0be7be2-4957-6f77-834f-249c87280d42"
 		}
 	]
 }
